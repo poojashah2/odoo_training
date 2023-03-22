@@ -1,0 +1,18 @@
+mkvirtualenv -p /usr/bin/python3.6 odoo-14e
+
+
+sudo apt install build-essential python3.6-dev libxslt-dev libzip-dev libldap2-dev libsasl2-dev
+
+
+
+sudo apt install postgresql postgresql-contrib
+
+
+
+CREATE ROLE odoo WITH SUPERUSER CREATEDB CREATEROLE LOGIN ENCRYPTED PASSWORD 'odoo';
+
+DROP ROLE odoo;
+
+
+python3 odoo-bin --addons-path=/home/odoo/workspace/odoo-15/addons -d NK --xmlrpc-port=4444
+
